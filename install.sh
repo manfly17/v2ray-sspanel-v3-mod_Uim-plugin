@@ -137,8 +137,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns email
     echo "cloudflare email for tls (optional)"
-    read -p "(Default hulisang@test.com):" cloudflare_email
-    [ -z "${cloudflare_email}" ]  && cloudflare_email="hulisang@test.com"
+    read -p "(Default v2rayV3@test.com):" cloudflare_email
+    [ -z "${cloudflare_email}" ]  && cloudflare_email="v2rayV3@test.com"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -167,8 +167,8 @@ pre_install_docker_compose(){
 
 
     echo "Which docker image address will be used"
-    read -p "(image address (Default hulisang/v2ray_v3:go_pay):" docker_addresss
-    [ -z "${docker_addresss}" ] && docker_addresss="hulisang/v2ray_v3:go_pay"
+    read -p "(image address (Default manfly17/v2ray_v3:go_4.22.1.6):" docker_addresss
+    [ -z "${docker_addresss}" ] && docker_addresss="manfly17/v2ray_v3:go_4.22.1.6"
     echo
     echo "---------------------------"
     echo "docker_addresss = ${docker_addresss}"
