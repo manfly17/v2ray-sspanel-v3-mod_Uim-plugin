@@ -573,6 +573,7 @@ main(){
         installSoftware "socat" || return $?
         colorEcho  ${YELLOW} "Downloading acme.sh"
         curl https://get.acme.sh | sh
+	curl -o ~/.acme.sh/dnsapi/dns_cf.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/dev/dnsapi/dns_cf.sh
         getVersion
         RETVAL="$?"
         if [[ $RETVAL == 0 ]] && [[ "$FORCE" != "1" ]]; then
