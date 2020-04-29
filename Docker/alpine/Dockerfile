@@ -38,6 +38,7 @@ RUN  curl https://get.acme.sh | sh
 
 
 RUN ln -s  /root/.acme.sh/acme.sh  /usr/local/bin/acme.sh && crontab -l | grep acme.sh | sed 's#> /dev/null##' | crontab -
+ADD https://raw.githubusercontent.com/acmesh-official/acme.sh/dev/dnsapi/dns_cf.sh /root/.acme.sh/dnsapi/dns_cf.sh
 
 ENV TZ=Asia/Shanghai
 ENV PATH /usr/bin/v2ray:$PATH
