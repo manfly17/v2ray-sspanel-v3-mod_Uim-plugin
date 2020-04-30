@@ -475,7 +475,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: a3v8meq8wcqn2twa/a3v8meq:caddy
+    image: manfly17/v2ray_v3:caddy
     restart: always
     environment:
       - ACME_AGREE=true
@@ -559,7 +559,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: a3v8meq8wcqn2twa/a3v8meq:caddy
+    image: manfly17/v2ray_v3:caddy
     restart: always
     environment:
       - ACME_AGREE=true
