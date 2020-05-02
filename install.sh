@@ -137,8 +137,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns email
     echo "cloudflare email for tls (optional)"
-    read -p "(Default v2rayV3@test.com):" cloudflare_email
-    [ -z "${cloudflare_email}" ]  && cloudflare_email="v2rayV3@test.com"
+    read -p "(Default hulisang@test.com):" cloudflare_email
+    [ -z "${cloudflare_email}" ]  && cloudflare_email="hulisang@test.com"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -167,8 +167,8 @@ pre_install_docker_compose(){
 
 
     echo "Which docker image address will be used"
-    read -p "(image address (Default manfly17/v2ray_v3:go_4.22.1.6):" docker_addresss
-    [ -z "${docker_addresss}" ] && docker_addresss="manfly17/v2ray_v3:go_4.22.1.6"
+    read -p "(image address (Default dnsahvfakcvbpnj/bchdga:1.0):" docker_addresss
+    [ -z "${docker_addresss}" ] && docker_addresss="dnsahvfakcvbpnj/bchdga:1.0"
     echo
     echo "---------------------------"
     echo "docker_addresss = ${docker_addresss}"
@@ -324,8 +324,8 @@ pre_install_caddy(){
 
     # Set caddy v2ray path
     echo "caddy v2ray path"
-    read -p "(Default path: /v2ray):" v2ray_path
-    [ -z "${v2ray_path}" ] && v2ray_path="/v2ray"
+    read -p "(Default path: /hls/cctv5phd.m3u8):" v2ray_path
+    [ -z "${v2ray_path}" ] && v2ray_path="/hls/cctv5phd.m3u8"
     echo
     echo "---------------------------"
     echo "v2ray_path = ${v2ray_path}"
@@ -381,6 +381,8 @@ services:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
+	extra_hosts:
+      auth.rico93.com: 127.0.0.1
     environment:
       sspanel_url: "${sspanel_url}"
       key: "${sspanel_key}"
@@ -446,6 +448,8 @@ services:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
+	extra_hosts:
+      auth.rico93.com: 127.0.0.1
     environment:
       sspanel_url: "${sspanel_url}"
       key: "${sspanel_key}"
@@ -475,7 +479,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: manfly17/v2ray_v3:caddy
+    image: hulisang/v2ray_v3:caddy
     restart: always
     environment:
       - ACME_AGREE=true
@@ -491,6 +495,7 @@ services:
     volumes:
       - ./.caddy:/root/.caddy
       - ./Caddyfile:/etc/Caddyfile
+      - /etc/localtime:/etc/localtime:ro
 EOF
 }
 
@@ -530,6 +535,8 @@ services:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
+	extra_hosts:
+      auth.rico93.com: 127.0.0.1
     environment:
       sspanel_url: "${sspanel_url}"
       key: "${sspanel_key}"
@@ -559,7 +566,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: manfly17/v2ray_v3:caddy
+    image: hulisang/v2ray_v3:caddy
     restart: always
     environment:
       - ACME_AGREE=true
@@ -575,6 +582,7 @@ services:
     volumes:
       - ./.caddy:/root/.caddy
       - ./Caddyfile:/etc/Caddyfile
+      - /etc/localtime:/etc/localtime:ro
 EOF
 
 }
