@@ -381,7 +381,7 @@ services:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
-	extra_hosts:
+    extra_hosts:
       auth.rico93.com: 127.0.0.1
     environment:
       sspanel_url: "${sspanel_url}"
@@ -448,7 +448,7 @@ services:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
-	extra_hosts:
+    extra_hosts:
       auth.rico93.com: 127.0.0.1
     environment:
       sspanel_url: "${sspanel_url}"
@@ -535,7 +535,7 @@ services:
     image: ${docker_addresss}
     restart: always
     network_mode: "host"
-	extra_hosts:
+    extra_hosts:
       auth.rico93.com: 127.0.0.1
     environment:
       sspanel_url: "${sspanel_url}"
