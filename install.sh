@@ -137,8 +137,8 @@ pre_install_docker_compose(){
 
     # Set caddy cloudflare ddns email
     echo "cloudflare email for tls (optional)"
-    read -p "(Default hulisang@test.com):" cloudflare_email
-    [ -z "${cloudflare_email}" ]  && cloudflare_email="hulisang@test.com"
+    read -p "(Default v2rayV3@test.com):" cloudflare_email
+    [ -z "${cloudflare_email}" ]  && cloudflare_email="v2rayV3@test.com"
     echo
     echo "---------------------------"
     echo "cloudflare_email = ${cloudflare_email}"
@@ -167,8 +167,8 @@ pre_install_docker_compose(){
 
 
     echo "Which docker image address will be used"
-    read -p "(image address (Default dnsahvfakcvbpnj/bchdga:1.0):" docker_addresss
-    [ -z "${docker_addresss}" ] && docker_addresss="dnsahvfakcvbpnj/bchdga:1.0"
+    read -p "(image address (Default manfly17/v2ray_v3:4.22.1.6):" docker_addresss
+    [ -z "${docker_addresss}" ] && docker_addresss="manfly17/v2ray_v3:4.22.1.6"
     echo
     echo "---------------------------"
     echo "docker_addresss = ${docker_addresss}"
@@ -479,7 +479,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: hulisang/v2ray_v3:caddy
+    image: manfly17/v2ray_v3:caddy
     restart: always
     environment:
       - ACME_AGREE=true
@@ -566,7 +566,7 @@ services:
         max-file: "3"
 
   caddy:
-    image: hulisang/v2ray_v3:caddy
+    image: manfly17/v2ray_v3:caddy
     restart: always
     environment:
       - ACME_AGREE=true
