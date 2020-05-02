@@ -1,11 +1,11 @@
 ## 免费最终版4.19：manfly17/v2ray_v3:go
-## 收费版4.22.1.6：manfly17/v2ray_v3:go_4.22.1.6
+## 收费版4.22.1.6：manfly17/v2ray_v3:4.22.1.6
 
 ## 使用方法：
 
 mkdir v2ray-agent  &&  \
 cd v2ray-agent && \
-curl https://raw.githubusercontent.com/manfly17/v2ray-sspanel-v3-mod_Uim-plugin/dev/install.sh -o install.sh && \
+curl https://raw.githubusercontent.com/manfly17/v2ray-sspanel-v3-mod_Uim-plugin/test/install.sh -o install.sh && \
 chmod +x install.sh && \
 bash install.sh
 
